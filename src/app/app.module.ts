@@ -6,14 +6,18 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HomeModule } from './home/home.module';
+import { ErrorsModule } from './errors/errors.module';
+import { ProfileComponent } from './profile/profile.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ErrorsModule,
     HomeModule
   ],
   providers: [],

@@ -2,11 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { SignInComponent } from './home/signin/signin.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {
     path: '',
     component: SignInComponent
+  },
+  {
+    path: 'user/:id',
+    component: ProfileComponent
   }
   
 
