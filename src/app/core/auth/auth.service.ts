@@ -10,7 +10,7 @@ import { API_URL_PUBLIC } from '../constants';
 })
 export class AuthService {
 
-  private pessoaSubject = new BehaviorSubject<Pessoa | undefined>(undefined);
+  public pessoaSubject = new BehaviorSubject<Pessoa | undefined>(undefined);
 
   constructor(private http: HttpClient) { }
 
@@ -21,15 +21,23 @@ export class AuthService {
         { email, senha },
         { observe: 'response' }
       ).pipe(map(res => {
-        if(res.body){
+        if (res.body) {
           const authtoken = res.body?.token;
           this.setToken(authtoken);
           this.notifyPessoa(res.body.pessoa)
+          this.salvarUsuario(res.body.pessoa)
         }
         return res
       }))
+  }
 
 
+  autoLogin(){
+    const usuarioJSON = localStorage.getItem('usuario')
+    if(usuarioJSON){
+      const usuario = JSON.parse(usuarioJSON)
+      this.notifyPessoa(usuario)
+    }
   }
 
   //user.service
@@ -37,12 +45,12 @@ export class AuthService {
     window.localStorage.setItem('token', token);
   }
 
-  getUser() {
-    return this.pessoaSubject.asObservable();
-  }
-
   private notifyPessoa(pessoa: Pessoa) {
     this.pessoaSubject.next(pessoa);
+  }
+
+  private salvarUsuario(usuario: Pessoa){
+    window.localStorage.setItem('usuario', JSON.stringify(usuario))
   }
 
   logout() {

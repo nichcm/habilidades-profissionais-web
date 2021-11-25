@@ -1,40 +1,42 @@
 <h4 class="text-center">Login</h4>
+<div class="container" style="max-width: 600px;">
+  <form [formGroup]="loginForm" class="form-sigin" (submit)="login()">
 
-<form [formGroup]="loginForm" class="form mt-4" (submit)="login()">
-
-    <div class="form-group">
+    <div class="form-sigin">
         <input #userNameInput
-            formControlName="userName" 
-            class="form-control" 
-            placeholder="user name" 
+            formControlName="userName"
+            class="form-control"
+            placeholder="Email"
             autofocus>
-        <ap-vmessage 
-            *ngIf="loginForm.get('userName')?.invalid &&   
+        <ap-vmessage
+            *ngIf="loginForm.get('userName')?.invalid &&
             (loginForm.get('userName')?.dirty || loginForm.get('userName')?.touched)"
-            text="User name is required!">
-        </ap-vmessage>        
+            text="e-mail é necessário!">
+        </ap-vmessage>
     </div>
 
     <div class="form-group">
         <input
-            formControlName="password" 
-            type="password" 
-            class="form-control" 
-            placeholder="password">
+            formControlName="password"
+            type="password"
+            class="form-control"
+            placeholder="Senha">
         <ap-vmessage
-            *ngIf="loginForm.get('password')?.invalid &&   
+            *ngIf="loginForm.get('password')?.invalid &&
             (loginForm.get('userName')?.dirty || loginForm.get('password')?.touched)"
-            text="Password is required!">
-        </ap-vmessage>               
+            text="Senha é necessária!">
+        </ap-vmessage>
     </div>
 
-    <button 
-        [disabled]="loginForm.invalid" 
-        type="submit" 
-        class="btn btn-primary btn-block">
+    <button
+        [disabled]="loginForm.invalid"
+        type="submit"
+        class="btn btn-lg btn-primary btn-block">
         login
     </button>
 
 </form>
 
 <p>Not a user?<a>Register now</a></p>
+
+</div>

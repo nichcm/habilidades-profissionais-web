@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { AuthService } from '../core/auth/auth.service';
 import { HabilidadeService } from '../core/habilidade/habilidade.service';
+import { Pessoa } from '../models/Pessoa';
 
 @Component({
   selector: 'app-profile',
@@ -9,6 +11,9 @@ import { HabilidadeService } from '../core/habilidade/habilidade.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+
+  pessoa$!: Observable<Pessoa>;
+  pessoa!: Pessoa;
 
   id!: number;
 
