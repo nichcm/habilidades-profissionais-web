@@ -1,0 +1,37 @@
+<h4 class="text-center"> Register to embrace a new world!</h4>
+
+<div class="container-sm">
+  <form [formGroup]="singupForm" class="form mt-4" (submit)="signup()">
+    <div class="form-group mt-4">
+        <input formControlName="nome"  placeholder="Nome" class="form-control" autofocus >
+        <ap-vmessage
+            *ngIf="singupForm.get('nome')?.invalid &&
+            (singupForm.get('email')?.dirty || singupForm.get('nome')?.touched)"
+            text="nome é requerido">
+        </ap-vmessage>
+    </div>
+
+    <div class="form-group mt-4">
+        <input formControlName="email" placeholder="E-mail" class="form-control">
+        <ap-vmessage
+            *ngIf="singupForm.get('email')?.invalid &&
+            (singupForm.get('email')?.dirty || singupForm.get('email')?.touched)"
+            text="email é requerido">
+        </ap-vmessage>
+        <ap-vmessage
+          *ngIf="errorMessagem"
+          [text]="errorMessagem"
+          >
+        </ap-vmessage>
+    </div>
+
+    <div class="form-group mt-4">
+        <input formControlName="senha" placeholder="senha" class="form-control">
+    </div>
+
+    <button [disabled]="singupForm.invalid || singupForm.pending" class="btn btn-primary btn-block">Register</button>
+
+    <p>Already a user?<a [routerLink]="['']">Sign In!</a></p>
+</form>
+</div>
+

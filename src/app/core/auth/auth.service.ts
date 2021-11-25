@@ -31,6 +31,9 @@ export class AuthService {
       }))
   }
 
+  signup(pessoa: Pessoa){
+    return this.http.post(API_URL_PUBLIC + '/register', pessoa)
+  }
 
   autoLogin(){
     const usuarioJSON = localStorage.getItem('usuario')
@@ -72,5 +75,9 @@ export class AuthService {
   removeToken() {
     window.localStorage.removeItem('token');
   }
+
+
+
+
 
 }

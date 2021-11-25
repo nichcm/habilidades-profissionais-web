@@ -4,12 +4,18 @@ import { AuthGuard } from './core/auth/auth.guard';
 import { LoginGuard } from './core/auth/login.guard';
 
 import { SignInComponent } from './home/signin/signin.component';
+import { SingupComponent } from './home/singup/singup.component';
 import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {
     path: '',
     component: SignInComponent,
+    canActivate: [LoginGuard]
+  },
+  {
+    path: 'signup',
+    component: SingupComponent,
     canActivate: [LoginGuard]
   },
   {
