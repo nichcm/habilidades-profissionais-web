@@ -7,21 +7,21 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HomeModule } from './home/home.module';
 import { ErrorsModule } from './errors/errors.module';
-import { ProfileComponent } from './profile/profile.component';
 import { AuthInterceptor } from './core/auth/auth.interceptor';
-import { NavBarComponent } from './core/nav-bar/nav-bar.component';
+
+import { ProfileModule } from './profile/profile.module';
+
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent,
-    NavBarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ErrorsModule,
-    HomeModule
+    HomeModule,
+    ProfileModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

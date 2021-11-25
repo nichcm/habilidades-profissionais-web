@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
-import { SignInComponent } from './signin/signin.component';
-import { ReactiveFormsModule }  from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { VMessageModule } from '../shared/components/vmessage/vmessage.module';
+import { ReactiveFormsModule }  from '@angular/forms';
 import { RouterModule } from '@angular/router';
+
+import { SignInComponent } from './signin/signin.component';
+import { VMessageModule } from '../shared/components/vmessage/vmessage.module';
 import { SingupComponent } from './singup/singup.component';
 
 @NgModule({

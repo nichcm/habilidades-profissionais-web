@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../core/auth/auth.service';
 import { Router } from '@angular/router';
 import { PlatformDetectorService } from '../../core/plataform-detector/platform-detector.service';
-import { catchError } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
