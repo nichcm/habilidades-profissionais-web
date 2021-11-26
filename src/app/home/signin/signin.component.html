@@ -1,42 +1,46 @@
-<h4 class="text-center">Login</h4>
-<div class="container" style="max-width: 600px;">
-  <form [formGroup]="loginForm" class="form-sigin" (submit)="login()">
+<div class="position-absolute top-50 start-50 translate-middle">
+  <div class="container shadow-lg p-4 mb-6 bg-body rounded">
+    <h4 class="text-center mb-6">Login</h4>
+    <div class="container" style="max-width: 600px;">
+      <form [formGroup]="loginForm" class="form-sigin" (submit)="login()">
 
-    <div class="form-sigin">
-        <input #userNameInput
-            formControlName="userName"
-            class="form-control"
-            placeholder="Email"
-            autofocus>
-        <ap-vmessage
-            *ngIf="loginForm.get('userName')?.invalid &&
-            (loginForm.get('userName')?.dirty || loginForm.get('userName')?.touched)"
-            text="e-mail é necessário!">
-        </ap-vmessage>
+        <div class="form-sigin mb-4">
+            <input #userNameInput
+                formControlName="userName"
+                class="form-control"
+                placeholder="Email"
+                autofocus>
+            <ap-vmessage
+                *ngIf="loginForm.get('userName')?.invalid &&
+                (loginForm.get('userName')?.dirty || loginForm.get('userName')?.touched)"
+                text="e-mail é necessário!">
+            </ap-vmessage>
+        </div>
+
+        <div class="form-group mb-4">
+            <input
+                formControlName="password"
+                type="password"
+                class="form-control"
+                placeholder="Senha">
+            <ap-vmessage
+                *ngIf="loginForm.get('password')?.invalid &&
+                (loginForm.get('userName')?.dirty || loginForm.get('password')?.touched)"
+                text="Senha é necessária!">
+            </ap-vmessage>
+        </div>
+
+        <button
+            [disabled]="loginForm.invalid"
+            type="submit"
+            class="btn btn-lg btn-primary btn-block mb-4">
+            login
+        </button>
+
+    </form>
+
+    <p>Not a user?<a [routerLink]="['signup']">Register now</a></p>
+
     </div>
-
-    <div class="form-group">
-        <input
-            formControlName="password"
-            type="password"
-            class="form-control"
-            placeholder="Senha">
-        <ap-vmessage
-            *ngIf="loginForm.get('password')?.invalid &&
-            (loginForm.get('userName')?.dirty || loginForm.get('password')?.touched)"
-            text="Senha é necessária!">
-        </ap-vmessage>
-    </div>
-
-    <button
-        [disabled]="loginForm.invalid"
-        type="submit"
-        class="btn btn-lg btn-primary btn-block">
-        login
-    </button>
-
-</form>
-
-<p>Not a user?<a [routerLink]="['signup']">Register now</a></p>
-
+  </div>
 </div>
