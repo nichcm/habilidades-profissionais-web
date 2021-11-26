@@ -43,6 +43,9 @@ export class AuthService {
     }
   }
 
+  pegaID(){
+    return this.pessoaSubject.asObservable()
+  }
   //user.service
   setToken(token: string) {
     window.localStorage.setItem('token', token);

@@ -1,0 +1,13 @@
+<table mdbTable>
+  <thead>
+    <tr>habilidade
+    </tr>
+  </thead>
+  <tbody>
+    <tr mdbTableCol *ngFor="let habilidade of habilidades">
+      <th>{{habilidade.titulo}}</th>
+      <td>{{habilidade.nivel}}</td>
+      <td>{{habilidade.experiencia}}</td>
+    </tr>
+  </tbody>
+</table>

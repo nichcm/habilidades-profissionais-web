@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from '../core/auth/auth.service';
-import { HabilidadeService } from '../core/habilidade/habilidade.service';
 import { Pessoa } from '../models/Pessoa';
+import { HabilidadeService } from './habilidade/habilidade.service';
 
 @Component({
   selector: 'app-profile',
