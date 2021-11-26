@@ -7,11 +7,15 @@ import { HabilidadeComponent } from './habilidade/habilidade.component';
 
 
 
+
 @NgModule({
   declarations: [
     ProfileComponent,
     NavBarComponent,
     HabilidadeComponent
+  ],
+  exports: [
+    NavBarComponent
   ],
   imports: [
     CommonModule,

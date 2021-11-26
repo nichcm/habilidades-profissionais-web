@@ -10,10 +10,12 @@ import { ErrorsModule } from './errors/errors.module';
 import { AuthInterceptor } from './core/auth/auth.interceptor';
 
 import { ProfileModule } from './profile/profile.module';
+import { AdminComponent } from './gerenciamento/admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

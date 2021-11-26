@@ -29,7 +29,6 @@ export class HabilidadeComponent implements OnInit {
     this.habilidadeService.pegaHabilidadesDaPessoa(this.pessoaID)
     .subscribe((habilidade)=>{
       this.habilidades = habilidade
-      console.log(this.habilidades)
     })
   }
 
